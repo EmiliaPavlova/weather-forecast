@@ -1,0 +1,8 @@
+.card_title {
+  font-size: 1.6rem;
+}
+
+.card_icon {
+  display: flex;
+  margin: 0 auto;
+}

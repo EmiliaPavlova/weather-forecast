@@ -1,0 +1,32 @@
+.forecast_wrapper {
+  display: flex;
+  justify-content: center;
+  min-width: 1000px;
+  margin: 20px 50px;
+}
+
+.day {
+  flex-basis: 20%;
+  max-width: 200px;
+  padding: 10px;
+  border-radius: 14px;
+  box-shadow: inset 0px 0px 5px 0px #a7a7a7;
+  cursor: pointer;
+}
+
+.selected_day {
+  box-shadow: inset 0px 0px 5px 0px #000000;
+}
+
+.time {
+  flex-basis: 12.5%;
+  max-width: 125px;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: inset 0px 0px 3px 0px #a7a7a7;
+}
+
+.forecast_label {
+  margin-left: 50px;
+  margin-top: 40px;
+}

@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 100px;
+  background: #a7a7a7;
+}
+
+.header_title {
+  width: 100%;
+  padding: 10px 0 20px;
+  text-align: center;
+  font-size: 2em;
+}
