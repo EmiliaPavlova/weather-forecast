@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ForecastBlock component matches the snapshot 1`] = `
+<Fragment>
+  <div
+    className="forecast_wrapper"
+  >
+    <div
+      className="day"
+      key="0"
+      onClick={[Function]}
+    >
+      <CardDay
+        date="16 April"
+        day="Saturday"
+        description="overcast clouds"
+        icon="04n"
+        weather="Clouds"
+      />
+    </div>
+  </div>
+  <div
+    className="forecast_label"
+  >
+    Click on a day to see a detailed forecast.
+  </div>
+  <div
+    className="forecast_wrapper"
+  />
+</Fragment>
+`;

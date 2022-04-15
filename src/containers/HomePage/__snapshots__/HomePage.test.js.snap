@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage component matches the snapshot 1`] = `
+<div
+  className="wrapper"
+>
+  <Header
+    title="5 day weather forecast for undefined"
+  />
+  <div
+    className="current_location_wrapper"
+  >
+    <button
+      className="current_location"
+      onClick={[Function]}
+    >
+      Get current location
+    </button>
+  </div>
+  <Search
+    onSearch={[Function]}
+    onSelectCity={[Function]}
+  />
+  <div
+    className="loading"
+  >
+    <img
+      alt="loading"
+      src="loading.gif"
+    />
+  </div>
+</div>
+`;

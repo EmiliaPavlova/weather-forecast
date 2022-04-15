@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardDay component converts temp props from Kelvin to Celsius 1`] = `
+<Fragment>
+  <div
+    className=""
+  >
+    15 April
+  </div>
+  <div
+    className="card_title"
+  >
+    Friday
+  </div>
+  <img
+    alt="sunny with clouds"
+    className="card_icon"
+    src="http://openweathermap.org/img/wn/icon@2x.png"
+  />
+  <div
+    className="card_title"
+  >
+    Sunny
+    , 
+    19
+    ℃
+  </div>
+  <div
+    className=""
+  >
+    Feels like 
+    19
+    ℃
+  </div>
+  <div
+    className=""
+  >
+    6
+    ℃ - 
+    24
+    ℃
+  </div>
+</Fragment>
+`;

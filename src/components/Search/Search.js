@@ -21,11 +21,11 @@ export default function Search({ onSearch, onSelectCity, results }) {
   const renderSuggestionsPopup = (results) => {
     if (!results.length) {
       return (
-        <div className='suggestions_wrapper'>No results found</div>
+        <div className='suggestions_wrapper' data-testid='suggestions'>No results found</div>
       )
     }
     return (
-      <div className='suggestions_wrapper'>
+      <div className='suggestions_wrapper' data-testid='suggestions'>
         {results && results.map((result, index) => {
           return <div key={index} onClick={() => selectCity(result)}>{result.name}, {result.country}</div>
         })}
@@ -34,18 +34,16 @@ export default function Search({ onSearch, onSelectCity, results }) {
   }
 
   return (
-    <>
-      <div className='search_wrapper'>
-        <DebounceInput
-          className=''
-          value={searchString}
-          placeholder='Enter city'
-          minLength={1}
-          debounceTimeout={500}
-          onChange={event => onSearch(event.target.value)}
-        />
-        {showSuggestions && renderSuggestionsPopup(results)}
-      </div>
-    </>
+    <div className='search_wrapper'>
+      <DebounceInput
+        className=''
+        value={searchString}
+        placeholder='Enter city'
+        minLength={2}
+        debounceTimeout={500}
+        onChange={event => onSearch(event.target.value)}
+      />
+      {showSuggestions && renderSuggestionsPopup(results)}
+    </div>
   )
 };

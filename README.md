@@ -44,8 +44,9 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 #
 
 ## Marked for future improvements
+  - The input field for location is not cleared on Get current location button click.
   - The API doesn't provide a single forecast for the day. At the moment it displays the forecast for the day at 12 o'clock or the earliest possible, if 12 o'clock has passed, but it can be changed to check for prevailing data in specific day slots and displays it.
   - More details can be added in the detailed previes by hours.
-  - Ad option for changing Celsius to Fahrenheit.
+  - Add an option for switching Celsius to Fahrenheit.
 
 

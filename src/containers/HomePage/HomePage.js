@@ -65,7 +65,6 @@ export default function HomePage() {
     }
   }
 
-
   return (
     <div className='wrapper'>
       <Header title={title} />
@@ -73,14 +72,12 @@ export default function HomePage() {
         <button className='current_location' onClick={getLocation}>Get current location</button>
       </div>
       <Search onSearch={onSearch} onSelectCity={(city) => setCoordinates(city)} results={searchData} />
-      <div className=''>
-        {loading
-          ? <div className='loading'><img src={spinner} alt='loading' /></div>
-          : coordinates
-            ? <ForecastBlock forecast={forecast}/>
-            : <div className='error'>{error ? error : 'No data found'}</div>
+      {loading
+        ? <div className='loading'><img src={spinner} alt='loading' /></div>
+        : coordinates
+          ? <ForecastBlock forecast={forecast}/>
+          : <div className='error'>{error ? error : 'No data found'}</div>
         }
-      </div>
     </div>
   );
 }

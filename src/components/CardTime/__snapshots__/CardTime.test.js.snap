@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardTime component converts temp props from Kelvin to Celsius 1`] = `
+<Fragment>
+  <div
+    className=""
+  >
+    17
+    :00
+  </div>
+  <img
+    alt="sunny with clouds"
+    className=""
+    src="http://openweathermap.org/img/wn/icon@2x.png"
+  />
+  <div
+    className=""
+  >
+    19
+    ℃
+  </div>
+  <div
+    className=""
+  >
+    sunny with clouds
+  </div>
+  <div
+    className=""
+  >
+    Feels like 
+    19
+    ℃
+  </div>
+</Fragment>
+`;
