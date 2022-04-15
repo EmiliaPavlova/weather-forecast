@@ -22,20 +22,23 @@ export default function HomePage() {
     fetch(locationData)
       .then(response => response.json())
       .then(data => {
-        console.log(data)
-        data.length > 1
-          ? setSearchData(data)
-          : setCoordinates(data[0]);
+        if (data.cod === 401 || data.cod === 429) {
+          setError(data.message);
+          setLoading(false);
+        } else {
+          data.length > 1
+            ? setSearchData(data)
+            : setCoordinates(data[0]);
+        }
       })
-      .catch(error => setError(error))
   }, [location])
 
   useEffect(() => {
     coordinates && fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`)
       .then(response => response.json())
       .then(data => {
-        console.log(data)
         setForecast(data.list);
+        !coordinates.name && setCoordinates({...coordinates, name: data.city.name })
         setLoading(false);
       })
       .catch(error => {
@@ -44,22 +47,38 @@ export default function HomePage() {
       })
   }, [coordinates])
 
-  const title = `5 day weather forecast for ${(coordinates && coordinates.name)}`;
+  const title = `5 day weather forecast for ${coordinates && coordinates.name}`;
 
-  const onSearch = (string) => setLocation(string)
+  const onSearch = (string) => setLocation(string);
+
+  const getLocation = () => {
+    if (!navigator.geolocation) {
+      setError('Geolocation is not supported by your browser');
+    } else {
+      setLoading(true);
+      navigator.geolocation.getCurrentPosition((position) => {
+        setLoading(false);
+        setCoordinates({lat: position.coords.latitude, lon: position.coords.longitude});
+      }, () => {
+        setError('Unable to retrieve your location');
+      });
+    }
+  }
+
 
   return (
     <div className='wrapper'>
       <Header title={title} />
+      <div className='current_location_wrapper'>
+        <button className='current_location' onClick={getLocation}>Get current location</button>
+      </div>
       <Search onSearch={onSearch} onSelectCity={(city) => setCoordinates(city)} results={searchData} />
       <div className=''>
         {loading
           ? <div className='loading'><img src={spinner} alt='loading' /></div>
           : coordinates
             ? <ForecastBlock forecast={forecast}/>
-            : error
-              ? <div>An error occured</div>
-              : <div>No data found</div>
+            : <div className='error'>{error ? error : 'No data found'}</div>
         }
       </div>
     </div>

@@ -6,3 +6,27 @@
   display: flex;
   justify-content: space-around;
 }
+
+.current_location_wrapper {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+  margin-right: 50px;
+}
+
+.current_location {
+  width: 200px;
+  padding: 5px 25px 5px 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  box-shadow: inset 0px 0px 3px 0px #a7a7a7;
+  text-align: left;
+  cursor: pointer;
+}
+
+.error {
+  margin-left: 50px;
+  margin-right: 50px;
+}

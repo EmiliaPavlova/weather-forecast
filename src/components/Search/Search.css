@@ -2,7 +2,6 @@
   position: relative;
   display: flex;
   justify-content: flex-end;
-  padding-top: 20px;
   margin-right: 50px;
 }
 
@@ -22,7 +21,7 @@
 
 .suggestions_wrapper {
   position: absolute;
-  top: 48px;
+  top: 28px;
   width: 200px;
   padding: 5px;
   box-sizing: border-box;
